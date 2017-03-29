@@ -4,13 +4,10 @@ class UsuariosController < ApplicationController
   # GET /usuarios
   def index
     @usuarios = Usuario.all
-
-    render json: @usuarios
   end
 
   # GET /usuarios/1
   def show
-    render json: @usuario
   end
 
   # POST /usuarios
@@ -18,7 +15,6 @@ class UsuariosController < ApplicationController
     @usuario = Usuario.new(usuario_params)
 
     if @usuario.save
-      render json: @usuario, status: :created, location: @usuario
     else
       render json: @usuario.errors, status: :unprocessable_entity
     end
@@ -27,7 +23,6 @@ class UsuariosController < ApplicationController
   # PATCH/PUT /usuarios/1
   def update
     if @usuario.update(usuario_params)
-      render json: @usuario
     else
       render json: @usuario.errors, status: :unprocessable_entity
     end

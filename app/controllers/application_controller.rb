@@ -1,2 +1,6 @@
-class ApplicationController < ActionController::API
+require "application_responder"
+
+class ApplicationController < ActionController::Base
+
+
 end
